@@ -18,6 +18,7 @@ How to use: You can specify only the most basic parameter: inputFileName; Whethe
 
 example: 
 Win:DataSplittingAlgorithm.exe data.txt false SOMPLEX
+
 Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX
 
 Or you can specify more parameters, as shown below:
@@ -36,4 +37,5 @@ outputValid = argv[9]: Set the file name of the output validation set, default =
 
 example: 
 Win:DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt
+
 Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt
