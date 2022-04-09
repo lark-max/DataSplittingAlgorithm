@@ -15,17 +15,25 @@ MDUPLEX: Improved and enhanced version of the DUPLEX method
 
 
 How to use: You can specify only the most basic parameter: inputFileName; Whether input is included in the partition calculation; splitting method
+
 example: 
 Win:DataSplittingAlgorithm.exe data.txt false SOMPLEX
 Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX
 
-Or you can specify more parameters, as shown below
+Or you can specify more parameters, as shown below:
+
 seed = argv[4]: Provide seeds for some random methods, default = 1000
+
 trainFraction = argv[5]: Set the fraction of the training set, default = 0.6
+
 testFraction = argv[6]: Set the fraction of the test set, default = 0.2
+
 outputTrain = argv[7]: Set the file name of the output training set, default = train.txt
+
 outputTest = argv[8]: Set the file name of the output test set, default = test.txt
+
 outputValid = argv[9]: Set the file name of the output validation set, default = valid.txt
+
 example: 
 Win:DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt
 Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt
