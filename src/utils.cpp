@@ -19,7 +19,7 @@ Console::Console(int argc, const char* argv[]):seed(1000), trainFrac(0.6),
 		else if (argv[2] == "false")
 			choice = 0;
 		else
-			choice = INT_MAX;
+			choice = -1;
 
 		string mmethod = argv[3];
 		if (mmethod == "SOMPLEX")
@@ -51,7 +51,7 @@ Console::Console(int argc, const char* argv[]):seed(1000), trainFrac(0.6),
 bool Console::checkValid() {
 	if (inputFileName.size()==0)
 		throw inputFileName;
-	if (choice == INT_MAX)
+	if (choice == -1)
 		throw choice;
 	if (method == Wrong)
 		throw method;
