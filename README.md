@@ -9,8 +9,10 @@ SOM-based stratified sampling The SBSS approach involves two steps (Bowden et al
 ### SOMPLEX: 
 Effectively combine the strengths of SOM and DUPLEX  
 ### MDUPLEX: 
-Improved and enhanced version of the DUPLEX method  
+Improved and enhanced version of the DUPLEX method 
 
+
+---
 `How to use`: You can specify only the most basic parameter: inputFileName; Whether input is included in the partition calculation; splitting method  
 example:  
 `Win:DataSplittingAlgorithm.exe data.txt false SOMPLEX`  
