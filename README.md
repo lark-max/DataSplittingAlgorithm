@@ -13,7 +13,7 @@ Improved and enhanced version of the DUPLEX method
 
 
 ---
-`How to use`: You can specify only the most basic parameter: inputFileName; Whether input is included in the partition calculation; splitting method  
+`How to use`: You can specify only the most basic parameter: inputFileName; Whether "I" is included in the partition calculation; splitting method  
 example:  
 `Win:DataSplittingAlgorithm.exe data.txt false SOMPLEX`  
 `Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX`  
