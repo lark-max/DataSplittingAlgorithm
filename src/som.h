@@ -17,16 +17,16 @@ namespace som {
 	class matrix : public vector< vector<T> >
 	{
 	public:
-								matrix();
-								matrix(int row, int col);
-								~matrix();
+		matrix();
+		matrix(int row, int col);
+		~matrix();
 	
-		int						rows()		const;
-		int						columns()	const;
-		T						Max()		const;
-		T						Min()		const;
-		T						Max(int j)	const;
-		T						Min(int j)	const;
+		int	rows()		const;
+		int	columns()	const;
+		T	Max()		const;
+		T	Min()		const;
+		T	Max(int j)	const;
+		T	Min(int j)	const;
 	};
 	template <typename T>
 	matrix<T>::matrix()
@@ -109,9 +109,9 @@ namespace som {
 		Inner_struct():_bias(0.0){}
 		~Inner_struct(){}
 
-		double					_bias;
-		vector<int>				_index;			// Represents the information stored in each neuron 
-		vector<double>			W;				// W represents the weight value of each neuron, which is variable	
+		double	_bias;
+		vector<int>	_index;			// Represents the information stored in each neuron 
+		vector<double>	W;				// W represents the weight value of each neuron, which is variable	
 	};
 
 	// main class
@@ -121,54 +121,54 @@ namespace som {
 		
 	public:
 		// Basic functions
-		void								RandomlyInitialize();
-		void								OutputClusterSet();
-		void								SetNeuronSize();
-		void								Normalize(matrix<double>& data);
-		void								GetNeighbor();
-		void								AllocateProcess(const vector<double>& Data_I, int& i);
-		void								BeforeTrainProcess(matrix<double>& InputData);
-		void								Train();
-		void								Train(const double& learningRate, const int neighborSize, const int Epochs);
-		void								GetActiveNeuron(const vector<double>& Data_I);
-		void								UpdateBias();
-		void								UpdateWeight(const vector<double>& Data_I);
-		void								Standardised(matrix<double>& data);
-		static double						GaussRand(double E = 0.0, double V = 1.0);
-		static double						GetMean(const vector<double>& _vector);
-		static double						GetStdev(const vector<double>& _vector);
-		static double						Getdistance_(const vector<double>& m, const vector<double>& n);
+		void	RandomlyInitialize();
+		void	OutputClusterSet();
+		void	SetNeuronSize();
+		void	Normalize(matrix<double>& data);
+		void	GetNeighbor();
+		void	AllocateProcess(const vector<double>& Data_I, int& i);
+		void	BeforeTrainProcess(matrix<double>& InputData);
+		void	Train();
+		void	Train(const double& learningRate, const int neighborSize, const int Epochs);
+		void	GetActiveNeuron(const vector<double>& Data_I);
+		void	UpdateBias();
+		void	UpdateWeight(const vector<double>& Data_I);
+		void	Standardised(matrix<double>& data);
+		static double	GaussRand(double E = 0.0, double V = 1.0);
+		static double	GetMean(const vector<double>& _vector);
+		static double	GetStdev(const vector<double>& _vector);
+		static double	Getdistance_(const vector<double>& m, const vector<double>& n);
 
 	private:
 		// basic parameters
-		int									totalData;
-		int									dimensions_;
-		int									neuronNumber_;
-		int									neuronRow;
-		int									neuronColumn;
-		int									maxIterations;
-		int									activeRow;
-		int									activeColumn;
-		int									neighbourhoodLowerRowIndex_;
-		int									neighbourhoodLowerColumnIndex_;
-		int									neighbourhoodUpperRowIndex_;
-		int									neighbourhoodUpperColumnIndex_;
-		int									neighbourhoodSize_;
-		double								learningRate_;
+		int	totalData;
+		int	dimensions_;
+		int	neuronNumber_;
+		int	neuronRow;
+		int	neuronColumn;
+		int	maxIterations;
+		int	activeRow;
+		int	activeColumn;
+		int	neighbourhoodLowerRowIndex_;
+		int	neighbourhoodLowerColumnIndex_;
+		int	neighbourhoodUpperRowIndex_;
+		int	neighbourhoodUpperColumnIndex_;
+		int	neighbourhoodSize_;
+		double	learningRate_;
 
-		double								orderingRate;
-		int									orderingNeiborSize;
-		int									orderingEpochs;
+		double	orderingRate;
+		int	orderingNeiborSize;
+		int	orderingEpochs;
 
-		double								tuningRate;
-		int									tuningNeiborSize;
-		int									tuningEpochs;
+		double	tuningRate;
+		int	tuningNeiborSize;
+		int	tuningEpochs;
 
-		double								consicience;
-		double								bias;
+		double	consicience;
+		double	bias;
 
-		matrix<double>						InputData;
-		matrix<Inner_struct>				ClusterSet;
+		matrix<double>	InputData;
+		matrix<Inner_struct>	ClusterSet;
 	};
 
 }
