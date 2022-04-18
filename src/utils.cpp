@@ -14,9 +14,9 @@ Console::Console(int argc, const char* argv[]):seed(1000), trainFrac(0.6),
 		inputFileName = argv[1]; 
 
 		string cchoice = argv[2];
-		if (argv[2] == "true")
-		choice = 1;
-		else if (argv[2] == "false")
+		if (cchoice == "true")
+			choice = 1;
+		else if (cchoice == "false")
 			choice = 0;
 		else
 			choice = -1;
