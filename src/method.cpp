@@ -33,44 +33,38 @@ void	method::GetTXTData(matrix<double>& data,string& str,vector<int>& Idex)
 	inpFile.open(str);
 	if (!inpFile)
 	{
-		std::cerr << "There is no such file named "<< str <<"\n"
+		std::ofstream outCerr;
+		outCerr.open("log.out", std::ios::app);
+		outCerr << "There is no such file named " << str << "\n"
 			<< "Please make sure the file is in the current folder!" << std::endl;
-		system("pause");
+		outCerr.close();
 		exit(1);
 	}
 	std::getline(inpFile, index_);
 	int column_size = std::count(index_.begin(), index_.end(), '\t') + 1;
-	int temp_ = 0, i = 1;
-	temp_data.resize(i);
+	int temp_ = 0;
+	temp_data.push_back(vector<double>());
 	while (inpFile >> temp_input)
 	{
 		if (inpFile.eof())
 			break;
 		if (temp_ % column_size == 0 && temp_ / column_size != 0)
-		{
-			temp_data.resize(i + 1);
-			++i;
-		}
-		temp_data[i - 1].push_back(temp_input);
+			temp_data.push_back(vector<double>());
+		temp_data.back().push_back(temp_input);
 		++temp_;
 	}
 	inpFile.close();
-
 	int row = (int)temp_data.size();
 	int col = (int)temp_data[0].size() - 1;
-
-	data.resize(row);
-	for (int i = 0; i < row; ++i)
-		data[i].resize(col);
-	
+	data.resize(row,vector<double>(col));
 	for (int i = 0; i < row; ++i)
 	{
 		Idex.push_back(round(temp_data[i][0]));
 		for (int j = 0; j < col; ++j)
 			data[i][j] = temp_data[i][j + 1];
 	}
-
 }
+
 void	method::Sequence(vector<int>& Idex, int max, int min)
 {
 	for (int i = min; i < max; ++i)
