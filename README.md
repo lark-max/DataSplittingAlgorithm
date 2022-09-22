@@ -17,7 +17,7 @@ I provide a typical data file ("data.txt"), the program will read this file, and
   
 The "data.txt" file gives a typical data format for this program. The first line of your file should contain "Idex","I",... ,"I","O"  
 `"Idex"`: This column is a subscript column that simply identifies each row of data. It is convenient to use a continuous sequence, but this is not necessary  
-`"I"`: This is a list of input vectors. In the field of hydrological models, there are rainfall (P), evapotranspiration (E), rainfall with a lag of N days (Pn), and so on. There can be multiple input vectors separated by a Tab '\t'(i.e., the Tab key)  
+`"I"..."I"`: This is a list of input vectors. In the field of hydrological models, there are rainfall (P), evapotranspiration (E), rainfall with a lag of N days (Pn), and so on. There can be multiple input vectors separated by a Tab '\t'(i.e., the Tab key)  
 `"O"`: This is the output vector, which corresponds to the runoff Q in the hydrological domain  
 
 `How to run`: You can specify only the most basic parameter: inputFileName; Whether "I"(i.e., the input vectors) is included in the partition calculation; splitting method  
