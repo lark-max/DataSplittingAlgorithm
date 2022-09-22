@@ -22,7 +22,7 @@ The "data.txt" file gives a typical data format for this program. The first line
   
 `"I"..."I"`: This is a list of input vectors. In the field of hydrological models, there are rainfall (P), evapotranspiration (E), rainfall with a lag of N days (Pn), and so on. There can be multiple input vectors separated by a Tab '\t'(i.e., the Tab key)  
   
-Note that you can choose not to include the input vectors("I"..."I") in the program operation, so that the program will only subset the output vector("O"); Otherwise, the program will compute the Euclidean distance between the rows to divide the subsets  
+Note that you can choose not to include the input vectors("I"..."I") in the program operation, so that the program will divide the subsets by "O" alone; Otherwise, the program will compute the Euclidean distance between the rows to divide the subsets  
   
 `"O"`: This is the output vector, which corresponds to the runoff Q in the hydrological domain  
   
