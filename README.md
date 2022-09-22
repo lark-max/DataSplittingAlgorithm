@@ -1,19 +1,5 @@
 # Data Splitting Methods Based on Data Distribution Consistency  
   
-Several data partitioning algorithms:  
-### Systematic: 
-Systematic sampling is another deterministic approach in which every kth observation is sampled. If the data are ordered in some way, this implicitly generates a stratified sample, with stratification on the ordinal variable. One
-approach is to sort the data along the output variable dimension to obtain a representative sample of the output variable distribution (Baxter, Stanley, Zhang, & Smith, 2000). This approach is easy to implement, as it assumes that the output variable can be mapped to a unique input state. However, this assumption may not hold in multivariate datasets where multiple input states might give rise to the same output, where the method cannot ensure that representative input–output combinations will be sampled, since only the output variable is considered. 
-### DUPLEX: 
-CADEX, or Kennard–Stone sampling (Kennard & Stone, 1969), is one of the earliest algorithms designed for data splitting. The approach iteratively draws samples based on distance, selecting points farthest away from those already included in the sample, and ensures maximum coverage of the data. An improved version called DUPLEX was proposed by Snee (1977); it is used widely in the field of chemometrics, including several ANN applications (Despagne & Massart, 1998; Sprevak, Azuaje, & Wang, 2004). However, the computational complexity of this algorithm may prohibit its use on large datasets.
-### SBSS: 
-SOM-based stratified sampling The SBSS approach involves two steps (Bowden et al., 2002). In the first step, the data are partitioned into K strata (clusters) using a selforganizing map (SOM; Kohonen, 1990), which considers the distances between data points. In the second step, data for the calibration and evaluation subsets are obtained by sampling from each of these strata. For SBSS-P, the sampling is done in proportion to the number of samples in each stratum. For SBSS-N, the sample allocation is increased for strata that contain a larger number of data points, or where the data points within a stratum have a larger variance (May et al., 2010).  
-### SOMPLEX: 
-Effectively combine the strengths of SOM and DUPLEX  
-### MDUPLEX: 
-Improved and enhanced version of the DUPLEX method 
-
-
 ---
 I provide a typical data file ("data.txt"), the program will read this file, and the data in the file can be divided into three subsets with consistent distribution characteristics (training set, test set, validation set). This is the rainfall and runoff data of a certain catchment for 10 years (precision is daily).  
     
@@ -47,4 +33,16 @@ If the program catch some errors(invalid parameters), all these errors are print
 My suggestion is to use my new two proposed methods to partition your data, i.e., SOMPLEX and MDUPLEX. Because the data distribution characteristics between the various subsets obtained by these two methods are more consistent, which is confirmed in a large number of hydrological historical data.
   
 These codes are written in Visual Studio 2019
-
+---
+Several data partitioning algorithms:  
+### Systematic: 
+Systematic sampling is another deterministic approach in which every kth observation is sampled. If the data are ordered in some way, this implicitly generates a stratified sample, with stratification on the ordinal variable. One
+approach is to sort the data along the output variable dimension to obtain a representative sample of the output variable distribution (Baxter, Stanley, Zhang, & Smith, 2000). This approach is easy to implement, as it assumes that the output variable can be mapped to a unique input state. However, this assumption may not hold in multivariate datasets where multiple input states might give rise to the same output, where the method cannot ensure that representative input–output combinations will be sampled, since only the output variable is considered. 
+### DUPLEX: 
+CADEX, or Kennard–Stone sampling (Kennard & Stone, 1969), is one of the earliest algorithms designed for data splitting. The approach iteratively draws samples based on distance, selecting points farthest away from those already included in the sample, and ensures maximum coverage of the data. An improved version called DUPLEX was proposed by Snee (1977); it is used widely in the field of chemometrics, including several ANN applications (Despagne & Massart, 1998; Sprevak, Azuaje, & Wang, 2004). However, the computational complexity of this algorithm may prohibit its use on large datasets.
+### SBSS: 
+SOM-based stratified sampling The SBSS approach involves two steps (Bowden et al., 2002). In the first step, the data are partitioned into K strata (clusters) using a selforganizing map (SOM; Kohonen, 1990), which considers the distances between data points. In the second step, data for the calibration and evaluation subsets are obtained by sampling from each of these strata. For SBSS-P, the sampling is done in proportion to the number of samples in each stratum. For SBSS-N, the sample allocation is increased for strata that contain a larger number of data points, or where the data points within a stratum have a larger variance (May et al., 2010).  
+### SOMPLEX: 
+Effectively combine the strengths of SOM and DUPLEX  
+### MDUPLEX: 
+Improved and enhanced version of the DUPLEX method 
