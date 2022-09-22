@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataSplittingAlgorithm", "DataSplittingAlgorithm.vcxproj", "{E21D1FC3-67BB-4069-A7F5-A1C9C08C31DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E21D1FC3-67BB-4069-A7F5-A1C9C08C31DB}.Debug|x64.ActiveCfg = Debug|x64
+		{E21D1FC3-67BB-4069-A7F5-A1C9C08C31DB}.Debug|x64.Build.0 = Debug|x64
+		{E21D1FC3-67BB-4069-A7F5-A1C9C08C31DB}.Debug|x86.ActiveCfg = Debug|Win32
+		{E21D1FC3-67BB-4069-A7F5-A1C9C08C31DB}.Debug|x86.Build.0 = Debug|Win32
+		{E21D1FC3-67BB-4069-A7F5-A1C9C08C31DB}.Release|x64.ActiveCfg = Release|x64
+		{E21D1FC3-67BB-4069-A7F5-A1C9C08C31DB}.Release|x64.Build.0 = Release|x64
+		{E21D1FC3-67BB-4069-A7F5-A1C9C08C31DB}.Release|x86.ActiveCfg = Release|Win32
+		{E21D1FC3-67BB-4069-A7F5-A1C9C08C31DB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8DE2605-506D-4269-ADDB-2111B59DCF61}
+	EndGlobalSection
+EndGlobal
