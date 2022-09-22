@@ -18,9 +18,9 @@ example:
 `Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX`  
   
 Or you can specify more parameters, as shown below:  
-`fileDirection` = argv[1]: Path to the data file
-`dims` = argv[2]: T | t | TRUE | True | true for including input vectors; F | f | FALSE | False | false for only output vector
-`method name:` = argv[3]: SOMPLEX | MDUPLEX | SS | DUPLEX | SBSS-P | SBSS-N
+`fileDirection` = argv[1]: Path to the data file  
+`dims` = argv[2]: T | t | TRUE | True | true for including input vectors; F | f | FALSE | False | false for only output vector  
+`method name:` = argv[3]: SOMPLEX | MDUPLEX | SS | DUPLEX | SBSS-P | SBSS-N  
 `seed` = argv[4]: Provide seeds for some random methods, default = 1000  
 `trainRatio` = argv[5]: Set the ratio of the training set, default = 0.6  
 `testRatio` = argv[6]: Set the ratio of the test set, default = 0.2  
