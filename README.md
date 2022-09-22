@@ -22,7 +22,7 @@ The "data.txt" file gives a typical data format for this program. The first line
 `"I"..."I"`: This is a list of input vectors. In the field of hydrological models, there are rainfall (P), evapotranspiration (E), rainfall with a lag of N days (Pn), and so on. There can be multiple input vectors separated by a Tab '\t'(i.e., the Tab key)  
 `"O"`: This is the output vector, which corresponds to the runoff Q in the hydrological domain  
 
-`How to run`: You can specify only the most basic parameter: inputFileName; Whether "I"(i.e., the input vectors) is included in the partition calculation; splitting method  
+`How to run`: (Default) You can only specify the most basic parameter: 1.inputFileName; 2.Whether "I"(i.e., the input vectors) is included in the partition calculation; 3.splitting method name
 example:  
 `Windows:DataSplittingAlgorithm.exe data.txt false SOMPLEX`  
 `Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX`  
