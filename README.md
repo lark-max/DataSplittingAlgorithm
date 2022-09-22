@@ -33,7 +33,7 @@ example:
   
 If the program catch some errors(invalid parameters), all these errors are printed to file called "log.out"  
   
-My suggestion is to use my new two proposed methods to partition your data, i.e., SOMPLEX and MDUPLEX. Because the data distribution characteristics between the various subsets obtained by these two methods are more consistent, which is confirmed in a large number of hydrological historical data.
+My suggestion is to use my new two proposed methods to partition your data, i.e., SOMPLEX and MDUPLEX. Because the data distribution characteristics between the various subsets obtained by these two methods are more consistent, which has been confirmed in a large number of hydrological datasets.
   
 These codes are written in Visual Studio 2019
   
