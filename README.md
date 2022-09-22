@@ -33,8 +33,11 @@ If the program catch some errors(invalid parameters), all these errors are print
 My suggestion is to use my new two proposed methods to partition your data, i.e., SOMPLEX and MDUPLEX. Because the data distribution characteristics between the various subsets obtained by these two methods are more consistent, which is confirmed in a large number of hydrological historical data.
   
 These codes are written in Visual Studio 2019
+  
+  
+Several data partitioning algorithms: 
 ---
-Several data partitioning algorithms:  
+  
 ### Systematic: 
 Systematic sampling is another deterministic approach in which every kth observation is sampled. If the data are ordered in some way, this implicitly generates a stratified sample, with stratification on the ordinal variable. One
 approach is to sort the data along the output variable dimension to obtain a representative sample of the output variable distribution (Baxter, Stanley, Zhang, & Smith, 2000). This approach is easy to implement, as it assumes that the output variable can be mapped to a unique input state. However, this assumption may not hold in multivariate datasets where multiple input states might give rise to the same output, where the method cannot ensure that representative input–output combinations will be sampled, since only the output variable is considered. 
