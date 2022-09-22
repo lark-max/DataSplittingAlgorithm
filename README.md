@@ -20,7 +20,7 @@ I provide a typical data file ("data.txt"), the program will read this file, and
 The "data.txt" file gives a typical data format for this program. The first line of your file should contain "Idex","I",... ,"I","O"  
 `"Idex"`: This column is a subscript column that simply identifies each row of data. It is convenient to use a continuous sequence, but this is not necessary  
   
-`"I"..."I"`: This is a list of input vectors. In the field of hydrological models, there are rainfall (P), evapotranspiration (E), rainfall with a lag of N days (Pn), and so on. There can be multiple input vectors separated by a Tab '\t'(i.e., the Tab key)  
+`"I"..."I"`: This is a list of input vectors. In the field of hydrological models, there are rainfall(P), evapotranspiration(E), Dislocation of the first n days of rainfall(Pn), and so on. There can be multiple input vectors separated by a Tab '\t'(i.e., the Tab key)  
   
 Note that you can choose not to include the input vectors("I"..."I") in the program operation, so that the program will divide the subsets by "O" alone; Otherwise, the program will compute the Euclidean distance between the rows to divide the subsets  
   
