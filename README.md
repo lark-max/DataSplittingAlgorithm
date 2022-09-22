@@ -24,7 +24,7 @@ The "data.txt" file gives a typical data format for this program. The first line
   
 Note that you can choose not to include the input vectors("I"..."I") in the program operation, so that the program will divide the subsets by "O" alone; Otherwise, the program will compute the Euclidean distance between the rows to divide the subsets  
   
-`"O"`: This is the output vector, which corresponds to the runoff Q in the hydrological domain  
+`"O"`: This is the output vector, which corresponds to the runoff Q in the hydrological models  
   
 `How to run`: (Default) You can only specify the most basic parameter: 1.inputFileName; 2.Whether "I"(i.e., the input vectors) is included in the partition calculation; 3.splitting method name  
 example:  
