@@ -18,9 +18,9 @@ The data.txt file gives a typical Input data format. The first line of your file
 `"I"`: This is a list of input vectors. In the field of hydrological models, there are rainfall (P), evapotranspiration (E), rainfall with a lag of N days (Pn), and so on. There can be multiple input vectors separated by a Tab '\t'(i.e., the Tab key)  
 `"O"`: This is the output vector, which corresponds to the runoff Q in the hydrological domain  
 
-`How to run`: You can specify only the most basic parameter: inputFileName; Whether "I" is included in the partition calculation; splitting method  
+`How to run`: You can specify only the most basic parameter: inputFileName; Whether "I"(i.e., the input vectors) is included in the partition calculation; splitting method  
 example:  
-`Win:DataSplittingAlgorithm.exe data.txt false SOMPLEX`  
+`Windows:DataSplittingAlgorithm.exe data.txt false SOMPLEX`  
 `Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX`  
 Or you can specify more parameters, as shown below:  
 `seed` = argv[4]: Provide seeds for some random methods, default = 1000  
@@ -30,5 +30,5 @@ Or you can specify more parameters, as shown below:
 `outputTest` = argv[8]: Set the file name of the output test set, default = test.txt  
 `outputValid` = argv[9]: Set the file name of the output validation set, default = valid.txt  
 example:  
-`Win:DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
+`Windows:DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
 `Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
