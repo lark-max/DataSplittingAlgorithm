@@ -39,5 +39,6 @@ example:
 `Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
   
 Finally, my suggestion is to use my new two proposed methods to partition your data, i.e., SOMPLEX and MDUPLEX. Because the data distribution characteristics between the various subsets obtained by these two methods are more consistent, which is confirmed in a large number of hydrological historical data.
-
+  
+These codes are written in Visual Studio 2019
 
