@@ -16,7 +16,7 @@ Improved and enhanced version of the DUPLEX method
 
 ---
 I provide a typical data file ("data.txt"), the program will read this file, and the data in the file can be divided into three subsets with consistent distribution characteristics (training set, test set, validation set). This is the rainfall and runoff data of a certain catchment for 10 years (precision is daily).  
-  
+    
 The "data.txt" file gives a typical data format for this program. The first line of your file should contain "Idex","I",... ,"I","O"  
 `"Idex"`: This column is a subscript column that simply identifies each row of data. It is convenient to use a continuous sequence, but this is not necessary  
   
@@ -25,7 +25,7 @@ The "data.txt" file gives a typical data format for this program. The first line
 Note that you can choose not to include the input vectors("I"..."I") in the program operation, so that the program will only subset the output vector("O"); Otherwise, the program will compute the Euclidean distance between the rows to divide the subsets  
   
 `"O"`: This is the output vector, which corresponds to the runoff Q in the hydrological domain  
-
+  
 `How to run`: (Default) You can only specify the most basic parameter: 1.inputFileName; 2.Whether "I"(i.e., the input vectors) is included in the partition calculation; 3.splitting method name  
 example:  
 `Windows:DataSplittingAlgorithm.exe data.txt false SOMPLEX`  
@@ -41,6 +41,8 @@ Or you can specify more parameters, as shown below:
 example:  
 `Windows:  DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
 `Linux:  ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
+  
+If the program catch some errors(invalid parameters), all these errors will be output to file called "log.out"  
   
 My suggestion is to use my new two proposed methods to partition your data, i.e., SOMPLEX and MDUPLEX. Because the data distribution characteristics between the various subsets obtained by these two methods are more consistent, which is confirmed in a large number of hydrological historical data.
   
