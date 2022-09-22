@@ -35,8 +35,8 @@ Or you can specify more parameters, as shown below:
 `outputTest` = argv[8]: Set the file name of the output test set, default = test.txt  
 `outputValid` = argv[9]: Set the file name of the output validation set, default = valid.txt  
 example:  
-`Windows: DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
-`Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
+`Windows:  DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
+`Linux:  ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
   
 My suggestion is to use my new two proposed methods to partition your data, i.e., SOMPLEX and MDUPLEX. Because the data distribution characteristics between the various subsets obtained by these two methods are more consistent, which is confirmed in a large number of hydrological historical data.
   
