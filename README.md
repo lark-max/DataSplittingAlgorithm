@@ -39,8 +39,8 @@ Or you can specify more parameters, as shown below:
 `outputTest` = argv[8]: Set the file name of the output test set, default = test.txt  
 `outputValid` = argv[9]: Set the file name of the output validation set, default = valid.txt  
 example:  
-`Windows:  DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
-`Linux:  ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
+`Windows: DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
+`Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.5 0.3 Tr.txt Ts.txt Vd.txt`  
   
 If the program catch some errors(invalid parameters), all these errors will be output to file called "log.out"  
   
