@@ -33,8 +33,8 @@ example:
   
 Or you can specify more parameters, as shown below:  
 `seed` = argv[4]: Provide seeds for some random methods, default = 1000  
-`trainFraction` = argv[5]: Set the fraction of the training set, default = 0.6  
-`testFraction` = argv[6]: Set the fraction of the test set, default = 0.2  
+`trainRatio` = argv[5]: Set the ratio of the training set, default = 0.6  
+`testRatio` = argv[6]: Set the ratio of the test set, default = 0.2  
 `outputTrain` = argv[7]: Set the file name of the output training set, default = train.txt  
 `outputTest` = argv[8]: Set the file name of the output test set, default = test.txt  
 `outputValid` = argv[9]: Set the file name of the output validation set, default = valid.txt  
