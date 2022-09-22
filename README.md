@@ -22,6 +22,7 @@ The data.txt file gives a typical Input data format. The first line of your file
 example:  
 `Windows:DataSplittingAlgorithm.exe data.txt false SOMPLEX`  
 `Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX`  
+  
 Or you can specify more parameters, as shown below:  
 `seed` = argv[4]: Provide seeds for some random methods, default = 1000  
 `trainFraction` = argv[5]: Set the fraction of the training set, default = 0.6  
