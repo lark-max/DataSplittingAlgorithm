@@ -11,9 +11,9 @@ Console::Console(int argc, const char* argv[]):seed(1000), trainFrac(0.6),
 		inputFileName = argv[1]; 
 
 		string cchoice = argv[2];
-		if (cchoice == "T" || cchoice == "True" || cchoice == "TRUE" || cchoice == "t")
+		if (cchoice == "T" || cchoice == "t" || cchoice == "TRUE" || cchoice == "True" || cchoice == "true")
 			choice = 1;
-		else if (cchoice == "F" || cchoice == "False" || cchoice == "FALSE" || cchoice == "f")
+		else if (cchoice == "F" || cchoice == "f" || cchoice == "FALSE" || cchoice == "False" || cchoice == "false")
 			choice = 0;
 		else
 			choice = -1;
@@ -70,7 +70,7 @@ void Console::check() {
 	catch (int err) {
 		std::ofstream outCerr;
 		outCerr.open("log.out", std::ios::app);
-		outCerr << "Lack some basic parameter: set [T,t,True,TRUE] or [F,f,False,FALSE] for whether include input vectors!" << std::endl;
+		outCerr << "Lack some basic parameter: set [T,t,TRUE,True,true] or [F,f,FALSE,False,false] for whether include input vectors!" << std::endl;
 		outCerr.close();
 		exit(1);
 	}
