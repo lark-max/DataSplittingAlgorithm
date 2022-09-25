@@ -7,7 +7,7 @@
 #include"utils.h"
 #include"som.h"
 #include"method.h"
-//#define DEBUG
+#define DEBUG
 
 int main(int argc,const char* argv[])
 {
