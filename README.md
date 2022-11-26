@@ -1,7 +1,7 @@
 # Data Splitting Methods Based on Data Distribution Consistency  
   
 ---
-I provide a typical data file ("data.txt"), the program will read this file, and the data in the file can be divided into three subsets with consistent distribution characteristics (training set, test set, validation set). This is the rainfall and runoff data of a certain catchment for 10 years (precision is daily).  
+This project provides a typical data file ("data.txt"), the program will read this file, and the data in the file can be divided into three subsets with consistent distribution characteristics (training set, test set, validation set). This is the rainfall and runoff data of a certain catchment for 10 years (precision is daily).  
     
 The "data.txt" file gives a typical data format for this program. The first line of your file should contain "Idex","I",... ,"I","O"  
 `"Idex"`: This column is a subscript column that simply identifies each row of data. It is convenient to use a continuous sequence, but this is not necessary  
