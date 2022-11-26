@@ -31,7 +31,7 @@ example:
 `Windows: DataSplittingAlgorithm.exe data.txt false SOMPLEX 1001 0.6 0.2 Tr.txt Ts.txt Vd.txt`  
 `Linux: ./DataSplittingAlgorithm data.txt false SOMPLEX 1001 0.6 0.2 Tr.txt Ts.txt Vd.txt`  
   
-If the program catch some errors(invalid parameters), all these errors are printed to file called "log.out"  
+If the program catch some errors(invalid input), all these errors are printed to file called "log.out"  
   
 My suggestion is to use my new two proposed methods to partition your data, i.e., SOMPLEX and MDUPLEX. Because the data distribution characteristics between the various subsets obtained by these two methods are more consistent, which has been confirmed in a large number of hydrological datasets.
   
