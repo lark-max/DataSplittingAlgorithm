@@ -21,7 +21,7 @@ void	method::GetTXTData(matrix<double>& data,string& str,vector<int>& Idex)
 {
 	vector< vector<double> > temp_data;
 	std::ifstream	inpFile;
-	std::string  index_;
+	std::string  index;
 	double temp_input;
 
 	inpFile.open(str);
@@ -34,8 +34,8 @@ void	method::GetTXTData(matrix<double>& data,string& str,vector<int>& Idex)
 		outCerr.close();
 		exit(1);
 	}
-	std::getline(inpFile, index_);
-	int column_size = std::count(index_.begin(), index_.end(), '\t') + 1;
+	std::getline(inpFile, index);
+	int column_size = std::count(index.begin(), index.end(), '\t') + 1;
 	int temp_ = 0;
 	temp_data.push_back(vector<double>());
 	while (inpFile >> temp_input)

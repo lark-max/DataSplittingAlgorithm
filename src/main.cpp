@@ -7,7 +7,7 @@
 #include"utils.h"
 #include"som.h"
 #include"method.h"
-#define DEBUG
+//#define DEBUG
 
 int main(int argc,const char* argv[])
 {
@@ -16,6 +16,7 @@ int main(int argc,const char* argv[])
 	argv[1] = "data.txt";argv[2] = "False"; argv[3] = "SOMPLEX"; 
 	argv[4] = "1095"; argv[5] = "0.6"; argv[6] = "0.2"; argv[7] = "train.txt"; argv[8] = "test.txt"; argv[9] = "valid.txt";
 #endif // DEBUG
+
 	Console console(argc, argv);
 	console.check(); //Check the input parameter
 

@@ -37,14 +37,14 @@ void SOMProcess::Train(const double& learnRate, const int neighborSize, const in
 		// Train process of each epoch
 		for (int i=0; i < m_totalData; ++i)
 		{
-			int index_ = order[i];
+			int index = order[i];
 			double decayFunction = 1.0 - (double)iteration / (double)m_maxIterations;
 			m_learningRate = decayFunction * learnRate;
 			m_neighbourhoodSize = (int)(decayFunction * (double)neighborSize + 0.5);
-			GetActiveNeuron(m_InputData[index_]);
+			GetActiveNeuron(m_InputData[index]);
 			GetNeighbor();
 			UpdateBias();
-			UpdateWeight(m_InputData[index_]);
+			UpdateWeight(m_InputData[index]);
 			++iteration;
 		}
 	}
@@ -276,7 +276,6 @@ double	SOMProcess::Getdistance(const vector<double>& m, const vector<double>& n)
 		outCerr.close();
 		exit(1);
 	}
-
 	else
 	{
 		for (int i = 0; i < m.size(); ++i)
