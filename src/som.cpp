@@ -1,5 +1,3 @@
-// SOM algorithm
-// Written by Chen J. Y. at 2020, Zhejiang UNV
 #include<iostream>
 #include<fstream>
 #include<algorithm>

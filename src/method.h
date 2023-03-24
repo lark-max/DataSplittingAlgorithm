@@ -1,5 +1,8 @@
-﻿// This file includes several methods for data splitting
-// Written by Chen J. Y. at 2020, Zhejiang UNV
+﻿/* 
+* This file contains several algorithms for data splitting
+* including the specific implementation of each algorithm
+* Written by Chen J. Y. at 2020, Zhejiang UNV
+*/
 #ifndef METHOD_
 #define METHOD_
 #include"som.h"
@@ -53,7 +56,7 @@ namespace method{
 		void	DP_Standardise(const vector<int>& CurrentDataIndex);
 		void	DP_InitialSample(vector<int>& ini_Data, vector<int>& Key);
 		void	DP_Resample(vector<int>& ini_Data, vector<int>& Key);
-		void	GetThisColumnData(vector<double>& _column_, int& j, const vector<int>& CurrentDataIndex);
+		void	GetThisColumnData(vector<double>& col, int& j, const vector<int>& CurrentDataIndex);
 		bool	CheckFull(vector<int>& Idexkey,vector<int>& key1,vector<int>& key2,vector<int>& key3,
 							const int& key1_lim, const int& key2_lim, const int& key3_lim);
 

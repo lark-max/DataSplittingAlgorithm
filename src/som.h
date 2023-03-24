@@ -1,5 +1,7 @@
-// SOM algorithm
-// Written by Chen J. Y. at 2020, Zhejiang UNV
+/*
+* This file contains the implementation classes for the SOM neural network
+* Written by Chen J. Y. at 2020, Zhejiang UNV
+*/
 #ifndef _SOMMethod
 #define	_SOMMethod
 #include<vector>

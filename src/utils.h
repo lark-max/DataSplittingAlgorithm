@@ -1,3 +1,7 @@
+/*
+* This file implements terminal interaction and exception handling classes
+* Written by Chen J. Y. at 2020, Zhejiang UNV
+*/
 #ifndef _UTIL_S
 #define _UTIL_S
 #include<string>
