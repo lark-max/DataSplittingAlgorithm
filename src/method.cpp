@@ -111,7 +111,7 @@ void	Method::DPModified_Process()
 	int test_size = (int)(group_size * m_Ratio_test + 0.5);
 	int valid_size = group_size - train_size - test_size;
 
-	int groupTMP, trainTMP, testTMP, validTMP;
+	int groupCnt, trainCnt, testCnt, validCnt;
 	//Step1:initially sample
 	if (m_TrainNumber > 0)
 		DP_InitialSample(DUPLEX_tempIndex, m_trainSet);
@@ -123,45 +123,27 @@ void	Method::DPModified_Process()
 	//Set up a basic sampling pool for each sampling
 	while (DUPLEX_tempIndex.size() > 0)
 	{
-		groupTMP = group_size; trainTMP = train_size; testTMP = test_size; validTMP = valid_size;
+		groupCnt = group_size; trainCnt = train_size; testCnt = test_size; validCnt = valid_size;
 
-		//Each data set must be sampled at least once 
-		if (m_trainSet.size() < m_TrainNumber) {
-			DP_Resample(DUPLEX_tempIndex, m_trainSet);
-			--trainTMP;
-			--groupTMP;
-		}
-		if (m_testSet.size() < m_TestNumber) {
-			DP_Resample(DUPLEX_tempIndex, m_testSet);
-			--testTMP;
-			--groupTMP;
-		}
-		if (m_validSet.size() < m_ValidNumber) {
-			DP_Resample(DUPLEX_tempIndex, m_validSet);
-			--validTMP;
-			--groupTMP;
-		}
-
-		//Sample in each group
-		while (groupTMP > 0)
+		while (groupCnt > 0)
 		{
-			if (trainTMP != 0 && m_trainSet.size() < m_TrainNumber)
+			if (trainCnt != 0 && m_trainSet.size() < m_TrainNumber)
 			{
 				DP_Resample(DUPLEX_tempIndex, m_trainSet);
-				--trainTMP;
-				--groupTMP;
+				--testCnt;
+				--groupCnt;
 			}
-			if (testTMP != 0 && m_testSet.size() < m_TestNumber)
+			if (testCnt != 0 && m_testSet.size() < m_TestNumber)
 			{
 				DP_Resample(DUPLEX_tempIndex, m_testSet);
-				--testTMP;
-				--groupTMP;
+				--testCnt;
+				--groupCnt;
 			}
-			if (validTMP != 0 && m_validSet.size() < m_ValidNumber)
+			if (validCnt != 0 && m_validSet.size() < m_ValidNumber)
 			{
 				DP_Resample(DUPLEX_tempIndex, m_validSet);
-				--validTMP;
-				--groupTMP;
+				--validCnt;
+				--groupCnt;
 			}
 		}
 	}
@@ -596,48 +578,30 @@ void	Method::BasedSOM_MDP_Sample()
 			int test_size = (int)(group_size * m_Ratio_test + 0.5);
 			int valid_size = group_size - train_size - test_size;
 
-			int groupTMP, trainTMP, testTMP, validTMP;
+			int groupCnt, trainCnt, testCnt, validCnt;
 			while (m_afterSOM->m_ClusterSet[i][j].m_index.size() > 0)
 			{
-				groupTMP = group_size; trainTMP = train_size; testTMP = test_size; validTMP = valid_size;
-				if (m_trainKey.size() < m_TrainNumber_eachNeuron[i][j])
-				{
-					DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_trainKey);
-					--trainTMP;
-					--groupTMP;
-				}
-				if (m_validKey.size() < m_ValidNumber_EachNeuron[i][j])
-				{
-					DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_validKey);
-					--validTMP;
-					--groupTMP;
-				}
-				if (m_testKey.size() < m_TestNumber_eachNeuron[i][j])
-				{
-					DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_testKey);
-					--testTMP;
-					--groupTMP;
-				} 
+				groupCnt = group_size; trainCnt = train_size; testCnt = test_size; validCnt = valid_size;
 
-				while (groupTMP)
+				while (groupCnt > 0)
 				{
-					if (trainTMP != 0 && m_trainKey.size() < m_TrainNumber_eachNeuron[i][j])
+					if (trainCnt != 0 && m_trainKey.size() < m_TrainNumber_eachNeuron[i][j])
 					{
 						DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_trainKey);
-						--trainTMP;
-						--groupTMP;
+						--trainCnt;
+						--groupCnt;
 					}
-					if (validTMP != 0 && m_validKey.size() < m_ValidNumber_EachNeuron[i][j])
+					if (validCnt != 0 && m_validKey.size() < m_ValidNumber_EachNeuron[i][j])
 					{
 						DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_validKey);
-						--validTMP;
-						--groupTMP;
+						--validCnt;
+						--groupCnt;
 					}
-					if (testTMP != 0 && m_testKey.size() < m_TestNumber_eachNeuron[i][j])
+					if (testCnt != 0 && m_testKey.size() < m_TestNumber_eachNeuron[i][j])
 					{
 						DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_testKey);
-						--testTMP;
-						--groupTMP;
+						--testCnt;
+						--groupCnt;
 					}
 				}
 			}
