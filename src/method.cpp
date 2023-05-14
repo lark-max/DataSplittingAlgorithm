@@ -111,7 +111,6 @@ void	Method::DPModified_Process()
 	int test_size = (int)(group_size * m_Ratio_test + 0.5);
 	int valid_size = group_size - train_size - test_size;
 
-	int groupCnt, trainCnt, testCnt, validCnt;
 	//Step1:initially sample
 	if (m_TrainNumber > 0)
 		DP_InitialSample(DUPLEX_tempIndex, m_trainSet);
@@ -121,30 +120,34 @@ void	Method::DPModified_Process()
 		DP_InitialSample(DUPLEX_tempIndex, m_validSet);
 
 	//Set up a basic sampling pool for each sampling
+	int trainCnt, testCnt, validCnt;
+	bool stopSignal;
 	while (DUPLEX_tempIndex.size() > 0)
 	{
-		groupCnt = group_size; trainCnt = train_size; testCnt = test_size; validCnt = valid_size;
-
-		while (groupCnt > 0)
+		trainCnt = train_size; testCnt = test_size; validCnt = valid_size;
+		while (true)
 		{
+			stopSignal = true;
 			if (trainCnt != 0 && m_trainSet.size() < m_TrainNumber)
 			{
 				DP_Resample(DUPLEX_tempIndex, m_trainSet);
-				--testCnt;
-				--groupCnt;
+				--trainCnt;
+				stopSignal = false;
 			}
 			if (testCnt != 0 && m_testSet.size() < m_TestNumber)
 			{
 				DP_Resample(DUPLEX_tempIndex, m_testSet);
 				--testCnt;
-				--groupCnt;
+				stopSignal = false;
 			}
 			if (validCnt != 0 && m_validSet.size() < m_ValidNumber)
 			{
 				DP_Resample(DUPLEX_tempIndex, m_validSet);
 				--validCnt;
-				--groupCnt;
+				stopSignal = false;
 			}
+			if (stopSignal)
+				break;
 		}
 	}
 }
@@ -579,30 +582,33 @@ void	Method::BasedSOM_MDP_Sample()
 			int valid_size = group_size - train_size - test_size;
 
 			int groupCnt, trainCnt, testCnt, validCnt;
+			bool stopSignal;
 			while (m_afterSOM->m_ClusterSet[i][j].m_index.size() > 0)
 			{
-				groupCnt = group_size; trainCnt = train_size; testCnt = test_size; validCnt = valid_size;
-
-				while (groupCnt > 0)
+				trainCnt = train_size; testCnt = test_size; validCnt = valid_size;
+				while (true)
 				{
+					stopSignal = true;
 					if (trainCnt != 0 && m_trainKey.size() < m_TrainNumber_eachNeuron[i][j])
 					{
 						DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_trainKey);
 						--trainCnt;
-						--groupCnt;
+						stopSignal = false;
 					}
 					if (validCnt != 0 && m_validKey.size() < m_ValidNumber_EachNeuron[i][j])
 					{
 						DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_validKey);
 						--validCnt;
-						--groupCnt;
+						stopSignal = false;
 					}
 					if (testCnt != 0 && m_testKey.size() < m_TestNumber_eachNeuron[i][j])
 					{
 						DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_testKey);
 						--testCnt;
-						--groupCnt;
+						stopSignal = false;
 					}
+					if (stopSignal)
+						break;
 				}
 			}
 			std::copy(m_trainKey.begin(), m_trainKey.end(), std::back_inserter(m_trainSet));
@@ -728,7 +734,6 @@ bool	Method::CheckFull(vector<int>& Idexkey,vector<int>& key1, vector<int>& key2
 void	Method::SetSamplingParameters()
 {
 	m_TotalNumber = m_data.size();
-	m_SampleNumber = (m_Ratio_train + m_Ratio_test) * m_TotalNumber;
 	m_TrainNumber = m_Ratio_train * m_TotalNumber;
 	m_TestNumber = m_Ratio_test * m_TotalNumber;
 	m_ValidNumber = m_TotalNumber - (m_TrainNumber + m_TestNumber);

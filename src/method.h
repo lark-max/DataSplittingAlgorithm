@@ -79,7 +79,6 @@ namespace method{
 
 	private:
 		int	m_TotalNumber;
-		int	m_SampleNumber;
 		int	m_TrainNumber;
 		int	m_TestNumber;
 		int	m_ValidNumber;
