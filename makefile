@@ -4,7 +4,7 @@
 SRC_DIR = src
 VPATH = $(SRC_DIR)
 CUR_DIR = $(shell pwd)
-TARGET_NAME = methods
+TARGET_NAME = DataSplittingAlgorithm
 Complier = g++
 Optm = -O3
 OBJ = $(patsubst %.cpp,%.o,$(wildcard $(SRC_DIR)/*.cpp))
