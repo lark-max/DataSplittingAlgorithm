@@ -86,15 +86,15 @@ double SOMProcess::GetMean(const vector<double>& _vector)
 
 double SOMProcess::GetStdev(const vector<double>& _vector)
 {
-	double mean_ = GetMean(_vector);
-	double var_ = 0.0;
+	double mean = GetMean(_vector);
+	double var = 0.0;
 	for (vector<double>::const_iterator iter = _vector.begin();
 		iter != _vector.end(); ++iter)
 	{
-		var_ += pow(*iter - mean_, 2.0);
+		var += pow(*iter - mean, 2.0);
 	}
-	var_ /= _vector.size();
-	return sqrt(var_);
+	var /= _vector.size();
+	return sqrt(var);
 }
 
 double	SOMProcess::GaussRand(double E, double V)

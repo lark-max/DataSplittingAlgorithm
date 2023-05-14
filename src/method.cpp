@@ -126,35 +126,40 @@ void	Method::DPModified_Process()
 		groupTMP = group_size; trainTMP = train_size; testTMP = test_size; validTMP = valid_size;
 
 		//Each data set must be sampled at least once 
-		if (m_trainSet.size() < m_TrainNumber)
+		if (m_trainSet.size() < m_TrainNumber) {
 			DP_Resample(DUPLEX_tempIndex, m_trainSet);
-		--trainTMP;
-		if (m_testSet.size() < m_TestNumber)
+			--trainTMP;
+		}
+		if (m_testSet.size() < m_TestNumber) {
 			DP_Resample(DUPLEX_tempIndex, m_testSet);
-		--testTMP;
-		if (m_validSet.size() < m_ValidNumber)
+			--testTMP;
+		}
+		if (m_validSet.size() < m_ValidNumber) {
 			DP_Resample(DUPLEX_tempIndex, m_validSet);
-		--validTMP;
-
-		groupTMP -= 3;
+			--validTMP;
+		}
+		groupTMP = trainTMP + testTMP + validTMP;
 
 		//Sample in each group
-		while (groupTMP--)
+		while (groupTMP > 0)
 		{
 			if (trainTMP != 0 && m_trainSet.size() < m_TrainNumber)
 			{
 				DP_Resample(DUPLEX_tempIndex, m_trainSet);
 				--trainTMP;
+				--groupTMP;
 			}
 			if (testTMP != 0 && m_testSet.size() < m_TestNumber)
 			{
 				DP_Resample(DUPLEX_tempIndex, m_testSet);
 				--testTMP;
+				--groupTMP;
 			}
 			if (validTMP != 0 && m_validSet.size() < m_ValidNumber)
 			{
 				DP_Resample(DUPLEX_tempIndex, m_validSet);
 				--validTMP;
+				--groupTMP;
 			}
 		}
 	}
@@ -431,14 +436,14 @@ void	Method::DP_Standardise(const vector<int>& CurrentDataIndex)
 {
 	if (m_data.columns()<2 || CurrentDataIndex.size() < 2)
 		return;
-	vector<double> _column_(CurrentDataIndex.size());
+	vector<double> column(CurrentDataIndex.size());
 	for (int j = 0; j < m_data.columns(); ++j)
 	{
-		GetThisColumnData(_column_, j, CurrentDataIndex);
-		double mean_ = SOMProcess::GetMean(_column_);
-		double stdev_ =SOMProcess::GetStdev(_column_);
+		GetThisColumnData(column, j, CurrentDataIndex);
+		double mean = SOMProcess::GetMean(column);
+		double stdev =SOMProcess::GetStdev(column);
 		for (int i = 0; i < CurrentDataIndex.size(); ++i)
-			m_data[CurrentDataIndex[i]][j] = (m_data[CurrentDataIndex[i]][j] - mean_) / stdev_;
+			m_data[CurrentDataIndex[i]][j] = (m_data[CurrentDataIndex[i]][j] - mean) / stdev;
 	}
 }
 
