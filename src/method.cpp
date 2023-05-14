@@ -129,16 +129,18 @@ void	Method::DPModified_Process()
 		if (m_trainSet.size() < m_TrainNumber) {
 			DP_Resample(DUPLEX_tempIndex, m_trainSet);
 			--trainTMP;
+			--groupTMP;
 		}
 		if (m_testSet.size() < m_TestNumber) {
 			DP_Resample(DUPLEX_tempIndex, m_testSet);
 			--testTMP;
+			--groupTMP;
 		}
 		if (m_validSet.size() < m_ValidNumber) {
 			DP_Resample(DUPLEX_tempIndex, m_validSet);
 			--validTMP;
+			--groupTMP;
 		}
-		groupTMP = trainTMP + testTMP + validTMP;
 
 		//Sample in each group
 		while (groupTMP > 0)
@@ -615,24 +617,27 @@ void	Method::BasedSOM_MDP_Sample()
 					DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_testKey);
 					--testTMP;
 					--groupTMP;
-				}
+				} 
 
-				while (groupTMP--)
+				while (groupTMP)
 				{
 					if (trainTMP != 0 && m_trainKey.size() < m_TrainNumber_eachNeuron[i][j])
 					{
 						DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_trainKey);
 						--trainTMP;
+						--groupTMP;
 					}
 					if (validTMP != 0 && m_validKey.size() < m_ValidNumber_EachNeuron[i][j])
 					{
 						DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_validKey);
 						--validTMP;
+						--groupTMP;
 					}
 					if (testTMP != 0 && m_testKey.size() < m_TestNumber_eachNeuron[i][j])
 					{
 						DP_Resample(m_afterSOM->m_ClusterSet[i][j].m_index, m_testKey);
 						--testTMP;
+						--groupTMP;
 					}
 				}
 			}
